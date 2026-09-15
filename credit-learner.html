@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c0e12" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>UAE credit · learner mode · Shayan</title>
+  <meta name="description" content="Phone-first learner map. Gate 1 WATCH_ALL. No Stage 2. Word bank + progressive Start to Open questions." />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <style>
+:root {
+  --bg: #0c0e12;
+  --bg-elev: #141820;
+  --card: #171c26;
+  --card-hi: #1c2230;
+  --line: rgba(255,255,255,.07);
+  --border: rgba(212,175,106,.16);
+  --text: #e8e6e1;
+  --muted: #b0aba0;
+  --dim: #8a857c;
+  --gold: #c9a227;
+  --gold-s: #d4af6a;
+  --gold-dim: rgba(201,162,39,.16);
+  --teal: #3d9b8f;
+  --teal-s: #5cb8ab;
+  --teal-dim: rgba(61,155,143,.16);
+  --risk: #c45c5c;
+  --risk-s: #d47878;
+  --risk-dim: rgba(196,92,92,.16);
+  --watch: #8b7ec8;
+  --watch-s: #b0a5e0;
+  --watch-dim: rgba(139,126,200,.18);
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --pad: 1.05rem;
+  --max: 440px;
+  --nav-h: 3.1rem;
+  --radius: 14px;
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-l: env(safe-area-inset-left, 0px);
+  --safe-r: env(safe-area-inset-right, 0px);
+  --bank-h: 2.6rem;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + var(--safe-t) + 3.6rem);
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.62;
+  color: var(--text);
+  background:
+    radial-gradient(820px 420px at 6% -8%, rgba(201,162,39,.09), transparent 55%),
+    radial-gradient(640px 360px at 100% 4%, rgba(139,126,200,.08), transparent 48%),
+    radial-gradient(500px 280px at 50% 100%, rgba(61,155,143,.05), transparent 45%),
+    var(--bg);
+  padding-bottom: calc(5.5rem + var(--safe-b));
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "LEARNER";
+  position: fixed;
+  inset: 22% -12%;
+  font: 700 18vw/1 var(--sans);
+  color: rgba(255,255,255,.028);
+  transform: rotate(-18deg);
+  pointer-events: none;
+  z-index: 0;
+}
+a { color: var(--gold-s); text-decoration: none; }
+a:hover { color: var(--gold); text-decoration: underline; }
+
+.banner {
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  background: linear-gradient(180deg, #1a1408 0%, #151008 100%);
+  color: #f0d48a;
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: .045em;
+  text-align: center;
+  padding: calc(.55rem + var(--safe-t)) calc(var(--pad) + var(--safe-r)) .55rem calc(var(--pad) + var(--safe-l));
+  border-bottom: 1px solid rgba(201,162,39,.35);
+  line-height: 1.4;
+}
+.nav {
+  position: sticky;
+  top: calc(2.35rem + var(--safe-t));
+  z-index: 110;
+  background: rgba(12,14,18,.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  padding: .35rem 0 .4rem;
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 calc(var(--pad) + var(--safe-r)) 0 calc(var(--pad) + var(--safe-l));
+}
+.nav-brand {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--watch-s);
+  margin-bottom: .15rem;
+}
+.nav-brand span {
+  font-family: var(--sans);
+  font-size: .7rem;
+  color: var(--dim);
+  margin-left: .35rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+.nav-links {
+  display: flex;
+  gap: .28rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: .1rem 0 .15rem;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a {
+  flex: 0 0 auto;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .28rem .62rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-links a.active,
+.nav-links a:hover {
+  color: var(--gold-s);
+  border-color: rgba(201,162,39,.4);
+  background: var(--gold-dim);
+  text-decoration: none;
+}
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 calc(var(--pad) + var(--safe-r)) 0 calc(var(--pad) + var(--safe-l));
+}
+
+.pills { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0 0; }
+.pill {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .22rem .55rem;
+  color: var(--muted);
+}
+.pill.watch { border-color: rgba(139,126,200,.45); background: var(--watch-dim); color: var(--watch-s); }
+.pill.teal { border-color: rgba(61,155,143,.4); background: var(--teal-dim); color: var(--teal-s); }
+.pill.gold { border-color: rgba(201,162,39,.45); background: var(--gold-dim); color: var(--gold-s); }
+.pill.risk { border-color: rgba(196,92,92,.4); background: var(--risk-dim); color: var(--risk-s); }
+
+.kicker {
+  font-size: .7rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin: 1.2rem 0 0;
+}
+h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.85rem;
+  line-height: 1.12;
+  margin: .45rem 0 .55rem;
+}
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.42rem;
+  line-height: 1.2;
+  margin: 0 0 .45rem;
+}
+.section-label {
+  display: block;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold-s);
+  margin: 2rem 0 .35rem;
+}
+.lede { color: var(--muted); font-size: 1.02rem; margin: 0 0 1rem; }
+section { margin-top: .25rem; }
+
+.hero {
+  margin: .9rem 0 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--card);
+  aspect-ratio: 16 / 9;
+}
+.hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dinner {
+  margin: 1.15rem 0 0;
+  padding: 1.05rem 1.1rem;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(139,126,200,.18), rgba(201,162,39,.1)),
+    var(--card);
+  border: 1px solid rgba(139,126,200,.4);
+  box-shadow: 0 10px 36px rgba(0,0,0,.28);
+}
+.dinner .tag {
+  display: inline-block;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--watch-s);
+  margin-bottom: .45rem;
+}
+.dinner p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  line-height: 1.35;
+  color: var(--text);
+}
+.dinner ul {
+  margin: .55rem 0 0;
+  padding: 0 0 0 1.1rem;
+  font-family: var(--sans);
+  font-size: .86rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.dinner li { margin: .28rem 0; }
+
+.why {
+  margin: .55rem 0 1rem;
+  padding: .7rem .85rem;
+  border-radius: 12px;
+  background: rgba(139,126,200,.12);
+  border: 1px solid rgba(139,126,200,.28);
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.why strong {
+  display: block;
+  font-size: .66rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--watch-s);
+  margin-bottom: .25rem;
+  font-weight: 700;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.05rem;
+  margin: .75rem 0;
+}
+.card.hi { border-color: var(--border); background: var(--card-hi); }
+.card h3 {
+  font-size: .95rem;
+  font-weight: 650;
+  margin: .35rem 0 .35rem;
+  letter-spacing: .01em;
+}
+.card p { margin: .35rem 0; }
+.card .meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem;
+  margin-bottom: .2rem;
+}
+.score {
+  font-family: var(--mono);
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--gold-s);
+  background: var(--gold-dim);
+  border: 1px solid rgba(201,162,39,.28);
+  border-radius: 6px;
+  padding: .12rem .4rem;
+}
+.conf {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: .1rem .35rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: .14rem .42rem;
+  vertical-align: middle;
+}
+.badge.proven { background: var(--teal-dim); color: var(--teal-s); border: 1px solid rgba(61,155,143,.35); }
+.badge.soft { background: var(--gold-dim); color: var(--gold-s); border: 1px solid rgba(201,162,39,.35); }
+.badge.unknown { background: var(--risk-dim); color: var(--risk-s); border: 1px solid rgba(196,92,92,.35); }
+.badge.watch { background: var(--watch-dim); color: var(--watch-s); border: 1px solid rgba(139,126,200,.4); }
+.badge.kill { background: var(--risk-dim); color: var(--risk-s); border: 1px solid rgba(196,92,92,.45); }
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .5rem;
+  margin: .9rem 0;
+}
+.stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: .75rem .55rem;
+  text-align: center;
+}
+.stat .n {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  line-height: 1;
+  color: var(--gold-s);
+}
+.stat .l {
+  font-size: .68rem;
+  color: var(--dim);
+  margin-top: .35rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.stat.teal .n { color: var(--teal-s); }
+.stat.watch .n { color: var(--watch-s); }
+.stat.risk .n { color: var(--risk-s); }
+
+.chart-wrap {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .9rem .85rem 1rem;
+  margin: .85rem 0;
+}
+.chart-wrap h3 {
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--gold-s);
+  margin: 0 0 .25rem;
+  font-weight: 650;
+}
+.chart-caption {
+  font-size: .78rem;
+  color: var(--dim);
+  margin: 0 0 .65rem;
+  line-height: 1.4;
+}
+.chart-box { position: relative; height: 210px; }
+.chart-box.tall { height: 240px; }
+.chart-box.doughnut { height: 220px; }
+
+.thesis-id {
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--watch-s);
+  letter-spacing: .04em;
+}
+
+.bar-meter {
+  margin: .55rem 0 .15rem;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  overflow: hidden;
+}
+.bar-meter > span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+}
+
+.landscape {
+  display: grid;
+  gap: .55rem;
+  margin: .75rem 0;
+}
+.layer {
+  display: grid;
+  grid-template-columns: 5.6rem 1fr;
+  gap: .55rem;
+  align-items: start;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: .7rem .8rem;
+}
+.layer .tier {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding-top: .15rem;
+}
+.layer .body { font-size: .9rem; line-height: 1.45; }
+.layer .body strong { color: var(--text); font-weight: 650; }
+.layer .players { color: var(--muted); font-size: .84rem; margin-top: .2rem; }
+
+.reg-grid { display: grid; gap: .55rem; margin: .7rem 0; }
+.reg-item {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--teal);
+  border-radius: 10px;
+  padding: .75rem .85rem;
+}
+.reg-item.soft { border-left-color: var(--gold); }
+.reg-item.unk { border-left-color: var(--risk); }
+.reg-item .t { font-size: .88rem; font-weight: 650; margin: .25rem 0 .2rem; }
+.reg-item .d { font-size: .86rem; color: var(--muted); margin: 0; line-height: 1.45; }
+
+.avoid-list { list-style: none; padding: 0; margin: .5rem 0 0; }
+.avoid-list li {
+  display: flex;
+  gap: .55rem;
+  align-items: flex-start;
+  padding: .55rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: .92rem;
+}
+.avoid-list li:last-child { border-bottom: 0; }
+.avoid-list .x {
+  flex: 0 0 auto;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: var(--risk-dim);
+  color: var(--risk-s);
+  display: grid;
+  place-items: center;
+  font-size: .75rem;
+  font-weight: 700;
+  margin-top: .05rem;
+}
+
+.progress {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: .3rem;
+  margin: .85rem 0 0;
+}
+.progress a {
+  text-align: center;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--dim);
+  text-decoration: none;
+  padding: .45rem .15rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  line-height: 1.25;
+}
+.progress a .n {
+  display: block;
+  font-family: var(--mono);
+  font-size: .7rem;
+  color: var(--gold-s);
+  margin-bottom: .15rem;
+}
+.progress a:hover { border-color: rgba(201,162,39,.4); color: var(--gold-s); text-decoration: none; }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .2rem;
+  font-size: .72rem;
+  font-weight: 650;
+  letter-spacing: .02em;
+  color: var(--gold-s);
+  background: var(--gold-dim);
+  border: 1px solid rgba(201,162,39,.35);
+  border-radius: 999px;
+  padding: .12rem .45rem;
+  cursor: pointer;
+  vertical-align: baseline;
+  font-family: var(--mono);
+  line-height: 1.3;
+  margin: 0 .05rem;
+}
+.chip:hover, .chip:focus {
+  background: rgba(201,162,39,.28);
+  outline: none;
+}
+.chip[aria-expanded="true"] {
+  background: rgba(139,126,200,.22);
+  border-color: rgba(139,126,200,.45);
+  color: var(--watch-s);
+}
+.chip-pop {
+  display: none;
+  margin: .35rem 0 .55rem;
+  padding: .55rem .7rem;
+  border-radius: 10px;
+  background: var(--bg-elev);
+  border: 1px solid rgba(139,126,200,.35);
+  font-size: .84rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.chip-pop.open { display: block; }
+.chip-pop .term {
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--watch-s);
+  letter-spacing: .04em;
+  display: block;
+  margin-bottom: .2rem;
+}
+
+.inline-defs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin: .55rem 0 .2rem;
+}
+
+.callout {
+  margin: .85rem 0;
+  padding: .85rem .95rem;
+  border-radius: 12px;
+  background: var(--gold-dim);
+  border: 1px solid rgba(201,162,39,.3);
+  font-size: .9rem;
+  color: var(--muted);
+}
+.callout strong { color: var(--gold-s); }
+.callout.teal {
+  background: var(--teal-dim);
+  border-color: rgba(61,155,143,.3);
+}
+.callout.teal strong { color: var(--teal-s); }
+.callout.risk {
+  background: var(--risk-dim);
+  border-color: rgba(196,92,92,.3);
+}
+.callout.risk strong { color: var(--risk-s); }
+
+.hero-line {
+  font-family: var(--serif);
+  font-size: 1.22rem;
+  line-height: 1.35;
+  margin: .4rem 0 .9rem;
+  color: var(--text);
+}
+
+.foot {
+  color: var(--dim);
+  font-size: .75rem;
+  line-height: 1.5;
+  margin: 2.2rem 0 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+ul.clean { padding-left: 1.1rem; margin: .4rem 0; }
+ul.clean li { margin: .28rem 0; color: var(--muted); }
+ul.clean strong { color: var(--text); }
+
+.svgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+  margin: .75rem 0;
+}
+.svg-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: .7rem;
+  text-align: center;
+}
+.svg-card .lbl {
+  font-size: .68rem;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-weight: 650;
+  margin-top: .35rem;
+}
+.svg-card .val {
+  font-family: var(--mono);
+  font-size: .85rem;
+  color: var(--teal-s);
+  margin-top: .15rem;
+}
+
+/* Sticky word bank */
+.wordbank {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background: rgba(12,14,18,.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(139,126,200,.35);
+  padding-bottom: var(--safe-b);
+  max-height: min(58vh, 420px);
+  display: flex;
+  flex-direction: column;
+}
+.wordbank-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: .65rem calc(var(--pad) + var(--safe-r)) .55rem calc(var(--pad) + var(--safe-l));
+  background: transparent;
+  border: 0;
+  color: var(--watch-s);
+  font: 650 .78rem/1.2 var(--sans);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: left;
+}
+.wordbank-toggle .hint {
+  font-size: .68rem;
+  color: var(--dim);
+  letter-spacing: .02em;
+  text-transform: none;
+  font-weight: 500;
+}
+.wordbank-toggle .chev {
+  font-size: .9rem;
+  color: var(--gold-s);
+  transition: transform .2s;
+}
+.wordbank.open .wordbank-toggle .chev { transform: rotate(180deg); }
+.wordbank-panel {
+  display: none;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: var(--max);
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 calc(var(--pad) + var(--safe-r)) .85rem calc(var(--pad) + var(--safe-l));
+}
+.wordbank.open .wordbank-panel { display: block; }
+.wb-item {
+  padding: .55rem 0;
+  border-top: 1px solid var(--line);
+}
+.wb-item .k {
+  font-family: var(--mono);
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--gold-s);
+  letter-spacing: .03em;
+}
+.wb-item .v {
+  font-size: .84rem;
+  color: var(--muted);
+  margin-top: .15rem;
+  line-height: 1.4;
+}
+.wb-search {
+  width: 100%;
+  margin: 0 0 .55rem;
+  padding: .55rem .7rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  font: 500 .88rem/1.3 var(--sans);
+}
+.wb-search::placeholder { color: var(--dim); }
+.wb-search:focus {
+  outline: none;
+  border-color: rgba(139,126,200,.5);
+}
+
+.path {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  flex-wrap: wrap;
+  margin: .7rem 0 0;
+  font-size: .72rem;
+  color: var(--dim);
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.path span.arrow { color: var(--gold); opacity: .7; }
+.path .here { color: var(--watch-s); }
+  </style>
+</head>
+<body>
+  <div class="banner">DRAFT · learner mode · WATCH_ALL · no Stage 2 · private · noindex</div>
+
+  <nav class="nav" aria-label="Learner path">
+    <div class="nav-inner">
+      <div class="nav-brand">Credit lending<span>learner mode</span></div>
+      <div class="nav-links">
+        <a href="#start">Start</a>
+        <a href="#map">Map</a>
+        <a href="#rules">Rules</a>
+        <a href="#players">Players</a>
+        <a href="#open">Open Qs</a>
+        <a href="#dinner">Dinner</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <div class="pills">
+      <span class="pill watch">G1 · WATCH_ALL</span>
+      <span class="pill teal">learner</span>
+      <span class="pill gold">word bank</span>
+      <span class="pill risk">no invented volumes</span>
+    </div>
+
+    <p class="kicker">FTLAB overnight · 15 Sep 2026 · progressive path</p>
+    <h1>UAE credit lending</h1>
+    <p class="hero-line">Build rails, not a bank. Learn the licence wall first, then the conduct stack.</p>
+    <p class="lede"><button type="button" class="chip" data-term="Stage 1">Stage 1</button> learning pack after Converge (7 loops), Claim Verifier, and Red. Gate decision: <button type="button" class="chip" data-term="WATCH_ALL">WATCH_ALL</button>. No <button type="button" class="chip" data-term="Stage 2">Stage 2</button> seat.</p>
+
+    <div class="hero" aria-hidden="false">
+      <img src="assets/credit-hero.png" alt="UAE credit lending visual hero" width="880" height="495" loading="eager" />
+    </div>
+
+    <div class="progress" aria-label="Learning path">
+      <a href="#start"><span class="n">1</span>Start</a>
+      <a href="#map"><span class="n">2</span>Map</a>
+      <a href="#rules"><span class="n">3</span>Rules</a>
+      <a href="#players"><span class="n">4</span>Players</a>
+      <a href="#open"><span class="n">5</span>Open Qs</a>
+    </div>
+
+    <!-- START -->
+    <section id="start">
+      <span class="section-label">1 · Start</span>
+      <h2>What you are looking at</h2>
+      <p class="lede">A phone learning map for an Australian investor reading GCC capital. Not a build brief. Not a Brand publish.</p>
+
+      <div class="why">
+        <strong>Why this matters to you</strong>
+        Licence walls decide where venture capital can sit. If you misread the wall, you fund a product the regulator already killed.
+      </div>
+
+      <div class="stat-row">
+        <div class="stat watch">
+          <div class="n">5</div>
+          <div class="l">Watch IDs</div>
+        </div>
+        <div class="stat teal">
+          <div class="n">0</div>
+          <div class="l">Stage 2</div>
+        </div>
+        <div class="stat">
+          <div class="n">7</div>
+          <div class="l">Loops</div>
+        </div>
+      </div>
+
+      <div class="card hi">
+        <span class="badge watch">WATCH</span>
+        <h3>CL01 · CL02 · CL03 · CL07 · CL10</h3>
+        <p style="color:var(--muted);font-size:.9rem;margin:0">Human G1 at 05:13Z. Watch the conduct stack. Digests stay education-only. Red posture: VALIDATE, serialise, do not BUILD NOW.</p>
+      </div>
+
+      <div class="inline-defs" aria-label="Core labels">
+        <button type="button" class="chip" data-term="Proven">Proven</button>
+        <button type="button" class="chip" data-term="Soft">Soft</button>
+        <button type="button" class="chip" data-term="Unknown">Unknown</button>
+        <button type="button" class="chip" data-term="WATCH">WATCH</button>
+        <button type="button" class="chip" data-term="Gate 1">Gate 1</button>
+        <button type="button" class="chip" data-term="CBUAE">CBUAE</button>
+      </div>
+      <div class="chip-pop" id="pop-start" hidden></div>
+
+      <div class="callout teal">
+        <strong>Attractiveness frame.</strong> High for <button type="button" class="chip" data-term="RegTech">RegTech</button> / lending OS tied to binding rules. Medium for private-credit ops software. Low for consumer <button type="button" class="chip" data-term="BNPL">BNPL</button> brands and neobanks.
+      </div>
+
+      <div class="path"><span class="here">Start</span><span class="arrow">→</span><span>Map</span><span class="arrow">→</span><span>Rules</span><span class="arrow">→</span><span>Players</span><span class="arrow">→</span><span>Open Qs</span></div>
+    </section>
+
+    <!-- MAP -->
+    <section id="map">
+      <span class="section-label">2 · Map</span>
+      <h2>How the system fits together</h2>
+      <p class="lede">Profit pools favour software, data, and collections over competing for net interest. Bottlenecks are licence, capital, thin-file credit data, and conduct ops.</p>
+
+      <div class="why">
+        <strong>Why this matters to you</strong>
+        GCC credit is not “fintech free-for-all”. Value sits where software reduces exam and conduct risk cheaper than a bank build.
+      </div>
+
+      <div class="landscape">
+        <div class="layer">
+          <div class="tier">Demand</div>
+          <div class="body">
+            <strong>Who borrows</strong>
+            <div class="players">Consumers · SMEs · corporates · developers · private-credit borrowers</div>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="tier">Originate</div>
+          <div class="body">
+            <strong>Who sells credit</strong>
+            <div class="players">Bank RM · <button type="button" class="chip" data-term="FC">FC</button> sales · BNPL <button type="button" class="chip" data-term="Agent">Agent</button> UX · Soft marketplace / broker</div>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="tier">Underwrite</div>
+          <div class="body">
+            <strong>Who checks risk</strong>
+            <div class="players"><button type="button" class="chip" data-term="CIA">CIA</button> / AECB pulls · scorecards · affordability (<button type="button" class="chip" data-term="DBR">DBR</button> / STC caps)</div>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="tier">Fund</div>
+          <div class="body">
+            <strong>Who puts money</strong>
+            <div class="players">Deposits · FC equity · <button type="button" class="chip" data-term="RLFC">RLFC</button> capital · Soft private-credit LPs</div>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="tier">Infra</div>
+          <div class="body">
+            <strong>Who holds the rails</strong>
+            <div class="players">CIA · payments · collateral registries · <button type="button" class="chip" data-term="escrow">escrow</button> · RegTech · <button type="button" class="chip" data-term="Sanadak">Sanadak</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <h3>Watch-set Stage 1 scores</h3>
+        <p class="chart-caption">CL01-CL03 / CL07 / CL10 · score /100 · conf B/C · learning ranks only · not a TAM</p>
+        <div class="chart-box tall"><canvas id="chart-scores" aria-label="Watch thesis scores bar chart"></canvas></div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0">Five theses on the board</h3>
+        <p style="font-size:.86rem;color:var(--dim);margin:0 0 .5rem">Cards teach the problem. Conf capped at B while Gazette PDF is missing.</p>
+      </div>
+
+      <div class="card hi">
+        <div class="meta">
+          <span class="thesis-id">CL01</span>
+          <span class="score">86</span>
+          <span class="conf">conf B</span>
+          <span class="badge proven">Proven rule</span>
+          <span class="badge soft">Soft WTP</span>
+        </div>
+        <h3>SME conduct &amp; affordability OS</h3>
+        <div class="bar-meter" aria-hidden="true"><span style="width:86%"></span></div>
+        <p>System of record for C 2/2026: <button type="button" class="chip" data-term="KFS">KFS</button>, bilingual disclosure, affordability, CIA, complaints/Sanadak, hardship. Effective <strong>13/9/2026</strong>.</p>
+        <p style="font-size:.86rem;color:var(--dim);margin:0">Customer: SME product/compliance at Banks &amp; FCs. Invalidate if free CBUAE templates cover exams.</p>
+      </div>
+
+      <div class="card">
+        <div class="meta">
+          <span class="thesis-id">CL02</span>
+          <span class="score">83</span>
+          <span class="conf">conf B</span>
+          <span class="badge proven">STC Proven</span>
+          <span class="badge unknown">Agents Unknown</span>
+        </div>
+        <h3><button type="button" class="chip" data-term="STC">STC</button> / BNPL compliance rail</h3>
+        <div class="bar-meter" aria-hidden="true"><span style="width:83%"></span></div>
+        <p>Limit, fee, term, CIA, and Agent controls under C 3/2023 Art 23-25. Beachhead: Tamara FZE Restricted on Aug 2026 register.</p>
+        <p style="font-size:.86rem;color:var(--dim);margin:0">One named RLFC proves class exists, not <button type="button" class="chip" data-term="SAM">SAM</button>.</p>
+      </div>
+
+      <div class="card">
+        <div class="meta">
+          <span class="thesis-id">CL10</span>
+          <span class="score">78</span>
+          <span class="conf">conf B*</span>
+          <span class="badge soft">Art 10 Soft</span>
+          <span class="badge watch">CL02 module</span>
+        </div>
+        <h3>Agent governance for STC</h3>
+        <div class="bar-meter" aria-hidden="true"><span style="width:78%"></span></div>
+        <p>Principal Bank/FC controls over Agents. Ship as module of CL02, not a third standalone ticket.</p>
+      </div>
+
+      <div class="card">
+        <div class="meta">
+          <span class="thesis-id">CL07</span>
+          <span class="score">77</span>
+          <span class="conf">conf B</span>
+          <span class="badge proven">Hardship duties</span>
+          <span class="badge soft">Feature?</span>
+        </div>
+        <h3>SME hardship &amp; restructuring toolkit</h3>
+        <div class="bar-meter" aria-hidden="true"><span style="width:77%"></span></div>
+        <p>Early outreach, restructuring, counselling, proportionate collections, 5-year comms retention. Wins on conduct evidence, not dialler features.</p>
+      </div>
+
+      <div class="card">
+        <div class="meta">
+          <span class="thesis-id">CL03</span>
+          <span class="score">76</span>
+          <span class="conf">conf C</span>
+          <span class="badge soft">Soft WTP</span>
+          <span class="badge watch">Merge PD02</span>
+        </div>
+        <h3>Escrow-linked developer credit evidence</h3>
+        <div class="bar-meter" aria-hidden="true"><span style="width:76%"></span></div>
+        <p>Milestone / completion evidence packs for construction and developer facilities. Bridge to property-run escrow themes.</p>
+      </div>
+
+      <div class="path"><span>Start</span><span class="arrow">→</span><span class="here">Map</span><span class="arrow">→</span><span>Rules</span><span class="arrow">→</span><span>Players</span><span class="arrow">→</span><span>Open Qs</span></div>
+    </section>
+
+    <!-- RULES -->
+    <section id="rules">
+      <span class="section-label">3 · Rules</span>
+      <h2>What is Proven on the shelf</h2>
+      <p class="lede">Primary rulebook and register extracts. Soft and Unknown stay labelled. No invented credit stock.</p>
+
+      <div class="why">
+        <strong>Why this matters to you</strong>
+        Binding rules create forced demand for software. Soft willingness-to-pay does not. Learn which claims are statute vs hope before you size a cheque.
+      </div>
+
+      <div class="reg-grid">
+        <div class="reg-item">
+          <span class="badge proven">Proven</span>
+          <div class="t">C 2/2026 SME Customer Protection</div>
+          <p class="d">Effective 13/9/2026. Banks &amp; FCs incl. Islamic. Affordability, CIA, KFS, hardship, Sanadak. Cancels C 1/2021.</p>
+        </div>
+        <div class="reg-item unk">
+          <span class="badge unknown">Unknown</span>
+          <div class="t">Official Gazette PDF of C 2/2026</div>
+          <p class="d">E-CONV-01 not_found. Conf capped at B. Rulebook HTML supports obligation existence only.</p>
+        </div>
+        <div class="reg-item">
+          <span class="badge proven">Proven</span>
+          <div class="t">STC / BNPL under C 3/2023</div>
+          <p class="d">≤12 months · no interest · no collateral · AED 20k or 3mo income · fees ≤30% · RLFC capital AED 20m or 5% book · RLFC or Agent path.</p>
+        </div>
+        <div class="reg-item soft">
+          <span class="badge soft">Soft</span>
+          <div class="t">Art 10.9-10.10 Agent monitoring</div>
+          <p class="d">Licensing route Proven. Monitoring specifics Soft until FC extract shelved (Verifier force Soft).</p>
+        </div>
+        <div class="reg-item">
+          <span class="badge proven">Proven</span>
+          <div class="t">Tamara FZE Restricted FC</div>
+          <p class="d">CBUAE Aug 2026 register 02.01.03.025.2025.02. One beachhead row, not full SAM.</p>
+        </div>
+        <div class="reg-item">
+          <span class="badge proven">Proven</span>
+          <div class="t">Mortgage C 31/2013 ratios</div>
+          <p class="d"><button type="button" class="chip" data-term="DBR">DBR</button> 50% · <button type="button" class="chip" data-term="LTV">LTV</button> nationals/expats/off-plan · tenor 25y. Vendor <button type="button" class="chip" data-term="WTP">WTP</button> remains Soft.</p>
+        </div>
+        <div class="reg-item">
+          <span class="badge proven">Proven</span>
+          <div class="t"><button type="button" class="chip" data-term="SAMA">SAMA</button> BNPL · SAR 10,000</div>
+          <p class="d">Art 22 current quantum Proven. Prior baseline Soft. Do not copy-paste products across borders.</p>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <h3>Evidence ledger strength</h3>
+        <p class="chart-caption">41 rows · Proven 27 · Soft 10 · Unknown 4 · verify1 PASS with warnings</p>
+        <div class="chart-box doughnut"><canvas id="chart-evidence" aria-label="Evidence strength doughnut"></canvas></div>
+      </div>
+
+      <div class="svgs" aria-label="Proven STC and mortgage caps">
+        <div class="svg-card">
+          <svg viewBox="0 0 120 70" width="100%" height="70" aria-hidden="true">
+            <rect x="8" y="18" width="104" height="36" rx="8" fill="rgba(61,155,143,.15)" stroke="#5cb8ab" stroke-width="1.5"/>
+            <text x="60" y="40" text-anchor="middle" fill="#5cb8ab" font-family="ui-monospace,monospace" font-size="14" font-weight="700">AED 20k</text>
+          </svg>
+          <div class="lbl">STC cap · Art 23.1</div>
+          <div class="val">Proven</div>
+        </div>
+        <div class="svg-card">
+          <svg viewBox="0 0 120 70" width="100%" height="70" aria-hidden="true">
+            <circle cx="60" cy="35" r="26" fill="rgba(201,162,39,.12)" stroke="#d4af6a" stroke-width="1.5"/>
+            <text x="60" y="40" text-anchor="middle" fill="#d4af6a" font-family="ui-monospace,monospace" font-size="13" font-weight="700">≤30%</text>
+          </svg>
+          <div class="lbl">STC fees · Art 23.4</div>
+          <div class="val">Proven</div>
+        </div>
+        <div class="svg-card">
+          <svg viewBox="0 0 120 70" width="100%" height="70" aria-hidden="true">
+            <rect x="10" y="28" width="30" height="28" rx="3" fill="#3d9b8f"/>
+            <rect x="45" y="22" width="30" height="34" rx="3" fill="#5cb8ab"/>
+            <rect x="80" y="38" width="30" height="18" rx="3" fill="#c9a227"/>
+          </svg>
+          <div class="lbl">Mortgage LTV mix</div>
+          <div class="val">85/80/50 Proven</div>
+        </div>
+        <div class="svg-card">
+          <svg viewBox="0 0 120 70" width="100%" height="70" aria-hidden="true">
+            <text x="60" y="32" text-anchor="middle" fill="#b0a5e0" font-family="Georgia,serif" font-size="18">SAR 10k</text>
+            <text x="60" y="50" text-anchor="middle" fill="#8a857c" font-family="ui-sans-serif,sans-serif" font-size="9">SAMA Art 22</text>
+          </svg>
+          <div class="lbl">KSA BNPL limit</div>
+          <div class="val">Proven</div>
+        </div>
+      </div>
+      <p style="font-size:.8rem;color:var(--dim);margin:.2rem 0 0">LTV: nationals first 85/75 · expats 80/70 · off-plan 50% · DBR max 50% · tenor 25y (C 31/2013).</p>
+
+      <div class="path"><span>Start</span><span class="arrow">→</span><span>Map</span><span class="arrow">→</span><span class="here">Rules</span><span class="arrow">→</span><span>Players</span><span class="arrow">→</span><span>Open Qs</span></div>
+    </section>
+
+    <!-- PLAYERS -->
+    <section id="players">
+      <span class="section-label">4 · Players</span>
+      <h2>Who sits where</h2>
+      <p class="lede">Education triad. No traction invent. Soft brands labelled Soft.</p>
+
+      <div class="why">
+        <strong>Why this matters to you</strong>
+        You are buying (or building) against banks, FCs, and global GRC vendors. Know the seat before you chase a brand story.
+      </div>
+
+      <div class="landscape">
+        <div class="layer">
+          <div class="tier">Mainland</div>
+          <div class="body">
+            <strong>Banks &amp; FCs</strong>
+            <div class="players">Incumbent SME / mortgage / consumer books · Soft product claims · in-house RegTech substitution risk Soft</div>
+            <div style="margin-top:.35rem"><span class="badge soft">Soft product</span> <span class="badge proven">FC framework</span></div>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="tier">STC lane</div>
+          <div class="body">
+            <strong>RLFC + Agents</strong>
+            <div class="players">Regime Proven · Tamara Restricted Proven · public Agent list Unknown · Tabby/Tamara Soft brand category</div>
+            <div style="margin-top:.35rem"><span class="badge proven">Tamara RLFC</span> <span class="badge unknown">Agents</span></div>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="tier">Infra</div>
+          <div class="body">
+            <strong>Etihad Credit Bureau (CIA)</strong>
+            <div class="players">Named in C 2/2026 defs · partner surface for CL01/CL09, not a competitor thesis</div>
+            <div style="margin-top:.35rem"><span class="badge proven">CIA role</span></div>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="tier">Free zone</div>
+          <div class="body">
+            <strong><button type="button" class="chip" data-term="DFSA">DFSA</button> / <button type="button" class="chip" data-term="ADGM">ADGM</button> credit</strong>
+            <div class="players">Providing Credit is a Financial Service (Proven) · Beehive Soft DFSA claim · register fetch blocked</div>
+            <div style="margin-top:.35rem"><span class="badge proven">DFSA GEN 2.5</span> <span class="badge soft">Beehive</span></div>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="tier">Global</div>
+          <div class="body">
+            <strong><button type="button" class="chip" data-term="GRC">GRC</button> / BNPL RegTech</strong>
+            <div class="players">MetricStream Soft ME · RegTechPRO · Fiskil Soft · Klarna/Affirm Soft archetype · import core + local packs</div>
+            <div style="margin-top:.35rem"><span class="badge soft">Soft analogues</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>White space (education).</strong> Unlicensed “start a BNPL/bank” is closed. Friction concentrates in conduct OS, STC evidence, Agent governance, hardship packs, collateral interfaces, and developer-credit evidence.
+      </div>
+
+      <div class="chart-wrap">
+        <h3>UAE GDP backdrop</h3>
+        <p class="chart-caption"><span class="badge proven">Proven</span> World Bank NY.GDP.MKTP.CD · US$ current · 2025 null in API · not credit TAM</p>
+        <div class="chart-box"><canvas id="chart-gdp" aria-label="UAE GDP bar chart"></canvas></div>
+      </div>
+
+      <div class="path"><span>Start</span><span class="arrow">→</span><span>Map</span><span class="arrow">→</span><span>Rules</span><span class="arrow">→</span><span class="here">Players</span><span class="arrow">→</span><span>Open Qs</span></div>
+    </section>
+
+    <!-- OPEN QUESTIONS -->
+    <section id="open">
+      <span class="section-label">5 · Open questions</span>
+      <h2>What still blocks sizing</h2>
+      <p class="lede">Unknowns that keep Gate at WATCH. Do not invent figures to fill them.</p>
+
+      <div class="why">
+        <strong>Why this matters to you</strong>
+        Open gaps are where capital dies. WATCH_ALL means learn cheaply before you fund a VALIDATE track.
+      </div>
+
+      <div class="card">
+        <ul class="clean">
+          <li><span class="badge unknown">Unknown</span> <strong>Official credit / BNPL stock</strong> (E-GAP-01) · no TAM invent</li>
+          <li><span class="badge unknown">Unknown</span> <strong>Public STC Agent registry</strong> (E-GAP-02) · SAM for CL02/CL10</li>
+          <li><span class="badge unknown">Unknown</span> <strong>Gazette PDF C 2/2026</strong> · conf B max</li>
+          <li><span class="badge unknown">Unknown</span> <strong>Free CBUAE templates</strong> covering CL01 need · kill path open</li>
+          <li><span class="badge soft">Soft</span> <strong>Bank / FC <button type="button" class="chip" data-term="ACV">ACV</button> and WTP</strong> · existential for <button type="button" class="chip" data-term="SaaS">SaaS</button></li>
+          <li><span class="badge soft">Soft</span> <strong>Named competitor licences</strong> beyond Tamara · Soft/Proven mix</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0">Avoid / kill</h3>
+        <ul class="avoid-list">
+          <li><span class="x">×</span><div><strong>CL14</strong> Unlicensed BNPL brand · licence wall Proven</div></li>
+          <li><span class="x">×</span><div><strong>CL15</strong> Neobank / full deposit bank · capital &amp; franchise disadvantage</div></li>
+          <li><span class="x">×</span><div>TrueSeeker pitch · excluded from this run</div></li>
+          <li><span class="x">×</span><div>Adaptic traction invent · off-floor</div></li>
+          <li><span class="x">×</span><div>Tokenised retail credit · Soft / hostile regulatory read</div></li>
+        </ul>
+      </div>
+
+      <div class="card hi">
+        <h3 style="margin-top:0">Cheap falsification first</h3>
+        <ol style="margin:.4rem 0 0;padding-left:1.2rem;color:var(--muted);font-size:.92rem">
+          <li style="margin:.35rem 0"><strong style="color:var(--text)">Serialise one VALIDATE track</strong> · CL01 Article→budget interviews <em>or</em> CL02/CL10 Agent SAM + partners, not both overnight seats.</li>
+          <li style="margin:.35rem 0"><strong style="color:var(--text)">8-12 FC / bank SME compliance chats</strong> · does Soft WTP become Soft budget language?</li>
+          <li style="margin:.35rem 0"><strong style="color:var(--text)">Bound Agent / RLFC denominator</strong> · even Soft-bounded with honesty.</li>
+          <li style="margin:.35rem 0"><strong style="color:var(--text)">Shelve Art 10.9-10.10 text</strong> · Soft→Proven upgrade for CL10.</li>
+          <li style="margin:.35rem 0"><strong style="color:var(--text)">One bank desk for CL03 vs PD02</strong> · single owner, no double-spend interviews.</li>
+          <li style="margin:.35rem 0"><strong style="color:var(--text)">Gazette PDF hunt</strong> · only path to raise conf above B.</li>
+        </ol>
+      </div>
+
+      <div class="callout risk">
+        <strong>Macro backdrop only.</strong> ARE GDP 2024 US$552.3bn · USD→EUR 0.86573 · US 10Y 4.96% (11 Sep 2026). Not credit TAM. AED pair unavailable on Frankfurter · not invented.
+      </div>
+
+      <div class="path"><span>Start</span><span class="arrow">→</span><span>Map</span><span class="arrow">→</span><span>Rules</span><span class="arrow">→</span><span>Players</span><span class="arrow">→</span><span class="here">Open Qs</span></div>
+    </section>
+
+    <!-- Dinner -->
+    <section id="dinner">
+      <span class="section-label">Dinner · what to say</span>
+      <h2>Allocator one-liner</h2>
+      <div class="dinner">
+        <div class="tag">Dinner callout · 4 bullets max</div>
+        <p>C 2/2026 is live. Do mid-tier finance companies buy a conduct evidence OS, or do Excel and counsel still pass the exam?</p>
+        <ul>
+          <li>Watch the conduct stack (CL01 / CL02 / CL10). No Stage 2 seat tonight.</li>
+          <li>Licence wall is Proven. Paid SaaS demand is Soft.</li>
+          <li>Serialise one VALIDATE track. Do not BUILD NOW.</li>
+          <li>If Soft WTP never converts, one kill saves more capital than five RegTech tickets.</li>
+        </ul>
+      </div>
+      <div class="why">
+        <strong>Why this matters to you</strong>
+        Dinner is the filter. If you cannot say the licence wall and the Soft WTP gap in one breath, you are not ready to allocate.
+      </div>
+    </section>
+
+    <p class="foot">
+      draft_needs_approval · Australian English · Soft/Proven honesty · no em dashes<br />
+      Gate 1 WATCH_ALL · approved_thesis_ids empty · stop_after_stage 1<br />
+      verify1 PASS_warnings · red1 COMPLETE · loops_executed 7 · §40 PASS<br />
+      Run <code style="font-family:var(--mono)">2026-09-15-uae-credit-lending</code> · learner mode · Chart.js CDN<br />
+      content_reuse private · never Brand · never publish · tap chips or open Word bank
+    </p>
+  </div>
+
+  <!-- Sticky word bank -->
+  <div class="wordbank" id="wordbank">
+    <button type="button" class="wordbank-toggle" id="wb-toggle" aria-expanded="false" aria-controls="wb-panel">
+      <span>Word bank <span class="hint">· tap any chip · or search here</span></span>
+      <span class="chev" aria-hidden="true">▲</span>
+    </button>
+    <div class="wordbank-panel" id="wb-panel" role="region" aria-label="Definitions">
+      <input type="search" class="wb-search" id="wb-search" placeholder="Filter terms…" autocomplete="off" />
+      <div id="wb-list"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+  <script>
+(function () {
+  const TERMS = {
+    "CIA": "Credit Information Agency. In UAE mainland practice this points at Etihad Credit Bureau (AECB). Lenders pull credit files for affordability and STC checks.",
+    "KFS": "Key Fact Statement. Plain-language product disclosure customers must receive before taking credit. Central to C 2/2026 SME conduct.",
+    "RLFC": "Restricted Licence Finance Company. CBUAE path that can originate Short-Term Credit / BNPL with lower capital than a full Finance Company (AED 20m or 5% of book).",
+    "STC": "Short-Term Credit. UAE regulated BNPL-style product under C 3/2023: ≤12 months, no interest, no collateral, fee and amount caps.",
+    "BNPL": "Buy Now Pay Later. Consumer instalment credit at checkout. In UAE it must sit inside the STC / RLFC or Agent licence wall.",
+    "escrow": "Ring-fenced account holding buyer funds until milestones complete. In property and developer lending, escrow evidence is what banks want before drawdowns.",
+    "Soft": "Evidence label: plausible, cited, but not primary statute/register/connector proof. Do not treat Soft as sized demand.",
+    "Proven": "Evidence label: primary rulebook, official register, or verified connector figure. Safe to teach as fact in this pack.",
+    "Unknown": "Evidence label: searched and not found, or deliberately not invented (e.g. credit stock volumes).",
+    "WATCH": "Gate posture for a thesis: keep learning, do not promote to Stage 2 build work yet.",
+    "WATCH_ALL": "Gate 1 decision for this run: watch every listed credit thesis (CL01, CL02, CL03, CL07, CL10). No Stage 2 seat.",
+    "Stage 1": "Learning / screening stage of the FTLAB venture pipeline. Digests and phone packs only. No execution plan.",
+    "Stage 2": "Deeper diligence seat after Gate approval. This run has zero Stage 2 theses.",
+    "Gate 1": "Human decision point after Stage 1 Converge / Verify / Red. Here: WATCH_ALL at 05:13Z on 15 Sep 2026.",
+    "CBUAE": "Central Bank of the UAE. Mainland regulator for banks, Finance Companies, RLFC, and Agents.",
+    "FC": "Finance Company. Licensed non-bank lender under CBUAE. Higher capital wall than RLFC.",
+    "Agent": "Party distributing STC for a principal Bank or FC. Principals must govern Agents (Art 10 Soft details until shelved).",
+    "DBR": "Debt Burden Ratio. Mortgage rule: repayments cannot exceed 50% of income under C 31/2013.",
+    "LTV": "Loan to Value. Max mortgage as % of property value. Nationals / expats / off-plan have different Proven caps.",
+    "Sanadak": "UAE financial ombudsman / complaints channel named in C 2/2026. Conduct OS must evidence complaint handling.",
+    "RegTech": "Regulatory technology. Software that helps licensed firms evidence compliance cheaper than spreadsheets and counsel alone.",
+    "SaaS": "Software as a Service. Recurring software sold to banks/FCs. Attractive only if Soft WTP becomes budget language.",
+    "WTP": "Willingness to pay. Soft until interviews show budget owners will fund a conduct OS.",
+    "SAM": "Serviceable Available Market. How many real buyers exist. Needs Agent/RLFC denominators we still lack.",
+    "ACV": "Annual Contract Value. Soft estimate in the pack (e.g. AED 150-400k for CL01) until design partners price it.",
+    "DFSA": "Dubai Financial Services Authority. DIFC free-zone regulator. Providing Credit is a regulated Financial Service.",
+    "ADGM": "Abu Dhabi Global Market. Free-zone financial centre with its own credit / arranging rules (FSRA).",
+    "SAMA": "Saudi Central Bank. KSA BNPL rules differ from UAE (fee-ban vs fee-cap). Do not copy products across borders.",
+    "GRC": "Governance, Risk, and Compliance platforms (global vendors). Often Soft Middle East footprint; local packs still needed.",
+    "conf B": "Confidence band B. Material claims supported but Gazette PDF missing, so conf cannot rise to A yet.",
+    "conf C": "Confidence band C. Thinner evidence (e.g. Soft WTP plus cross-run links). Learning rank only."
+  };
+
+  const gold = "#c9a227";
+  const goldSoft = "#d4af6a";
+  const teal = "#3d9b8f";
+  const tealSoft = "#5cb8ab";
+  const riskSoft = "#d47878";
+  const watchSoft = "#b0a5e0";
+  const muted = "#9a968c";
+  const grid = "rgba(255,255,255,0.05)";
+  const tick = "#6b6760";
+
+  function whenReady(fn) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", fn);
+    } else {
+      fn();
+    }
+  }
+
+  function renderWordbank(filter) {
+    const list = document.getElementById("wb-list");
+    if (!list) return;
+    const q = (filter || "").trim().toLowerCase();
+    const keys = Object.keys(TERMS).sort(function (a, b) {
+      return a.toLowerCase().localeCompare(b.toLowerCase());
+    });
+    let html = "";
+    keys.forEach(function (k) {
+      if (q && k.toLowerCase().indexOf(q) === -1 && TERMS[k].toLowerCase().indexOf(q) === -1) return;
+      html += '<div class="wb-item" data-k="' + k.replace(/"/g, "") + '"><div class="k">' + k + '</div><div class="v">' + TERMS[k] + "</div></div>";
+    });
+    list.innerHTML = html || '<p style="color:var(--dim);font-size:.85rem">No matches.</p>';
+  }
+
+  function showDefNear(chip, term) {
+    const def = TERMS[term];
+    if (!def) return;
+    document.querySelectorAll(".chip-pop.open").forEach(function (el) {
+      el.classList.remove("open");
+      el.hidden = true;
+      el.innerHTML = "";
+    });
+    document.querySelectorAll(".chip[aria-expanded='true']").forEach(function (c) {
+      if (c !== chip) c.setAttribute("aria-expanded", "false");
+    });
+    let pop = chip.nextElementSibling;
+    if (!pop || !pop.classList.contains("chip-pop")) {
+      pop = document.createElement("div");
+      pop.className = "chip-pop";
+      chip.insertAdjacentElement("afterend", pop);
+    }
+    const open = chip.getAttribute("aria-expanded") === "true";
+    if (open) {
+      chip.setAttribute("aria-expanded", "false");
+      pop.classList.remove("open");
+      pop.hidden = true;
+      return;
+    }
+    chip.setAttribute("aria-expanded", "true");
+    pop.innerHTML = '<span class="term">' + term + "</span>" + def;
+    pop.hidden = false;
+    pop.classList.add("open");
+  }
+
+  function initChips() {
+    document.body.addEventListener("click", function (e) {
+      const chip = e.target.closest(".chip");
+      if (!chip) return;
+      e.preventDefault();
+      const term = chip.getAttribute("data-term");
+      if (!term || !TERMS[term]) return;
+      showDefNear(chip, term);
+    });
+  }
+
+  function initWordbank() {
+    const wb = document.getElementById("wordbank");
+    const toggle = document.getElementById("wb-toggle");
+    const search = document.getElementById("wb-search");
+    renderWordbank("");
+    toggle.addEventListener("click", function () {
+      const open = wb.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) search.focus();
+    });
+    search.addEventListener("input", function () {
+      renderWordbank(search.value);
+    });
+  }
+
+  function initNav() {
+    const links = document.querySelectorAll(".nav-links a[href^='#']");
+    const sections = [];
+    links.forEach(function (a) {
+      const id = a.getAttribute("href").slice(1);
+      const el = document.getElementById(id);
+      if (el) sections.push({ id: id, el: el, a: a });
+    });
+    function onScroll() {
+      const y = window.scrollY + 130;
+      let current = sections[0];
+      for (let i = 0; i < sections.length; i++) {
+        if (sections[i].el.offsetTop <= y) current = sections[i];
+      }
+      links.forEach(function (a) { a.classList.remove("active"); });
+      if (current) current.a.classList.add("active");
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  function initCharts() {
+    if (typeof Chart === "undefined") return;
+    Chart.defaults.color = muted;
+    Chart.defaults.borderColor = grid;
+    Chart.defaults.font.family = "ui-sans-serif, system-ui, sans-serif";
+    Chart.defaults.font.size = 12;
+
+    const tip = {
+      backgroundColor: "rgba(20,24,32,0.95)",
+      titleColor: goldSoft,
+      bodyColor: "#e8e6e1",
+      borderColor: "rgba(212,175,106,0.25)",
+      borderWidth: 1,
+      cornerRadius: 8,
+      padding: 10
+    };
+
+    const scoresEl = document.getElementById("chart-scores");
+    if (scoresEl) {
+      new Chart(scoresEl, {
+        type: "bar",
+        data: {
+          labels: ["CL01", "CL02", "CL10", "CL07", "CL03"],
+          datasets: [{
+            label: "Score /100",
+            data: [86, 83, 78, 77, 76],
+            backgroundColor: [tealSoft, teal, watchSoft, goldSoft, gold],
+            borderRadius: 6,
+            maxBarThickness: 42
+          }]
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: Object.assign({}, tip, {
+              callbacks: {
+                afterLabel: function (ctx) {
+                  const notes = [
+                    "SME conduct OS · conf B · Soft WTP",
+                    "STC compliance · conf B · Agents Unknown",
+                    "Agent governance · CL02 module · Art 10 Soft",
+                    "Hardship toolkit · feature of CL01?",
+                    "Developer evidence · conf C · merge PD02"
+                  ];
+                  return notes[ctx.dataIndex] || "";
+                }
+              }
+            })
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+              max: 100,
+              grid: { color: grid },
+              ticks: { color: tick, stepSize: 20 }
+            },
+            y: {
+              grid: { display: false },
+              ticks: { color: muted, font: { size: 12, weight: "600" } }
+            }
+          }
+        }
+      });
+    }
+
+    const evEl = document.getElementById("chart-evidence");
+    if (evEl) {
+      new Chart(evEl, {
+        type: "doughnut",
+        data: {
+          labels: ["Proven", "Soft", "Unknown"],
+          datasets: [{
+            data: [27, 10, 4],
+            backgroundColor: [tealSoft, goldSoft, riskSoft],
+            borderColor: "#0c0e12",
+            borderWidth: 3,
+            hoverOffset: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: "58%",
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: { color: muted, boxWidth: 12, padding: 14, font: { size: 13 } }
+            },
+            tooltip: Object.assign({}, tip, {
+              callbacks: {
+                afterLabel: function (ctx) {
+                  const notes = [
+                    "Rules, register, macro connectors",
+                    "WTP, brands, Art 10 monitoring",
+                    "Volumes, Agents, Gazette PDF"
+                  ];
+                  return notes[ctx.dataIndex] || "";
+                }
+              }
+            })
+          }
+        }
+      });
+    }
+
+    const gdpEl = document.getElementById("chart-gdp");
+    if (gdpEl) {
+      new Chart(gdpEl, {
+        type: "bar",
+        data: {
+          labels: ["2022", "2023", "2024"],
+          datasets: [{
+            label: "US$ bn",
+            data: [511.4, 522.6, 552.3],
+            backgroundColor: [gold, goldSoft, tealSoft],
+            borderRadius: 6,
+            maxBarThickness: 48
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: Object.assign({}, tip, {
+              callbacks: {
+                label: function (ctx) {
+                  return " US$ " + ctx.raw + " bn (current)";
+                },
+                afterLabel: function () {
+                  return "Backdrop only · not credit stock";
+                }
+              }
+            })
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { color: muted, font: { size: 12, weight: "500" } }
+            },
+            y: {
+              beginAtZero: false,
+              suggestedMin: 480,
+              grid: { color: grid },
+              ticks: { color: tick, callback: function (v) { return v + "bn"; } }
+            }
+          }
+        }
+      });
+    }
+  }
+
+  whenReady(function () {
+    initNav();
+    initChips();
+    initWordbank();
+    function boot() {
+      if (typeof Chart === "undefined") {
+        window.addEventListener("load", initCharts);
+        return;
+      }
+      initCharts();
+    }
+    boot();
+  });
+})();
+  </script>
+</body>
+</html>
