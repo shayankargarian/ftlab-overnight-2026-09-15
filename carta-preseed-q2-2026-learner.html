@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c0e12" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Carta pre-seed Q2 2026 · learner · Shayan</title>
+  <meta name="description" content="Phone learner brief: Carta State of Pre-Seed Q2 2026 Soft US figures. Word bank + why it matters. No invented chart points." />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <style>
+:root {
+  --bg: #0c0e12;
+  --bg-elev: #141820;
+  --card: #171c26;
+  --card-hi: #1c2230;
+  --line: rgba(255,255,255,.07);
+  --border: rgba(212,175,106,.16);
+  --text: #e8e6e1;
+  --muted: #b0aba0;
+  --dim: #8a857c;
+  --gold: #c9a227;
+  --gold-s: #d4af6a;
+  --gold-dim: rgba(201,162,39,.16);
+  --teal: #3d9b8f;
+  --teal-s: #5cb8ab;
+  --teal-dim: rgba(61,155,143,.16);
+  --risk: #c45c5c;
+  --risk-s: #d47878;
+  --risk-dim: rgba(196,92,92,.16);
+  --watch: #8b7ec8;
+  --watch-s: #b0a5e0;
+  --watch-dim: rgba(139,126,200,.18);
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --pad: 1.05rem;
+  --max: 440px;
+  --radius: 14px;
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-l: env(safe-area-inset-left, 0px);
+  --safe-r: env(safe-area-inset-right, 0px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.62;
+  color: var(--text);
+  background:
+    radial-gradient(820px 420px at 6% -8%, rgba(201,162,39,.09), transparent 55%),
+    radial-gradient(640px 360px at 100% 4%, rgba(139,126,200,.08), transparent 48%),
+    radial-gradient(500px 280px at 50% 100%, rgba(61,155,143,.05), transparent 45%),
+    var(--bg);
+  padding-bottom: calc(3.5rem + var(--safe-b));
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "LEARNER";
+  position: fixed;
+  inset: 22% -12%;
+  font: 700 18vw/1 var(--sans);
+  color: rgba(255,255,255,.028);
+  transform: rotate(-18deg);
+  pointer-events: none;
+  z-index: 0;
+}
+a { color: var(--gold-s); text-decoration: none; }
+a:hover { color: var(--gold); text-decoration: underline; }
+
+.banner {
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  background: linear-gradient(180deg, #1a1408 0%, #151008 100%);
+  color: #f0d48a;
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: .045em;
+  text-align: center;
+  padding: calc(.55rem + var(--safe-t)) calc(var(--pad) + var(--safe-r)) .55rem calc(var(--pad) + var(--safe-l));
+  border-bottom: 1px solid rgba(201,162,39,.35);
+  line-height: 1.4;
+}
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 calc(var(--pad) + var(--safe-r)) 0 calc(var(--pad) + var(--safe-l));
+}
+.pills { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0 0; }
+.pill {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .22rem .55rem;
+  color: var(--muted);
+}
+.pill.gold { border-color: rgba(201,162,39,.45); background: var(--gold-dim); color: var(--gold-s); }
+.pill.teal { border-color: rgba(61,155,143,.4); background: var(--teal-dim); color: var(--teal-s); }
+.pill.watch { border-color: rgba(139,126,200,.45); background: var(--watch-dim); color: var(--watch-s); }
+.kicker {
+  font-size: .7rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin: 1.2rem 0 0;
+}
+h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.85rem;
+  line-height: 1.12;
+  margin: .45rem 0 .55rem;
+}
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  margin: 0 0 .45rem;
+}
+.lede { color: var(--muted); font-size: 1.02rem; margin: 0 0 1rem; }
+.section-label {
+  display: block;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold-s);
+  margin: 1.85rem 0 .35rem;
+}
+.hero {
+  margin: .9rem 0 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(145deg, rgba(201,162,39,.22), rgba(61,155,143,.12) 45%, rgba(12,14,18,.9)),
+    var(--card);
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+.hero .big {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  line-height: 1.15;
+  color: var(--text);
+}
+.hero .sub {
+  margin-top: .45rem;
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gold-s);
+  font-weight: 650;
+}
+.dinner {
+  margin: 1.15rem 0 0;
+  padding: 1.05rem 1.1rem;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(139,126,200,.18), rgba(201,162,39,.1)),
+    var(--card);
+  border: 1px solid rgba(139,126,200,.4);
+  box-shadow: 0 10px 36px rgba(0,0,0,.28);
+}
+.dinner .tag {
+  display: inline-block;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--watch-s);
+  margin-bottom: .45rem;
+}
+.dinner p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+.dinner ul {
+  margin: .55rem 0 0;
+  padding: 0 0 0 1.1rem;
+  font-size: .86rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.dinner li { margin: .28rem 0; }
+.why {
+  margin: .55rem 0 1rem;
+  padding: .7rem .85rem;
+  border-radius: 12px;
+  background: rgba(139,126,200,.12);
+  border: 1px solid rgba(139,126,200,.28);
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.why strong {
+  display: block;
+  font-size: .66rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--watch-s);
+  margin-bottom: .25rem;
+  font-weight: 700;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.05rem;
+  margin: .75rem 0;
+}
+.card.hi { border-color: var(--border); background: var(--card-hi); }
+.card h3 {
+  font-size: .95rem;
+  font-weight: 650;
+  margin: .35rem 0 .35rem;
+}
+.card p { margin: .35rem 0; }
+.badge {
+  display: inline-block;
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: .14rem .42rem;
+  vertical-align: middle;
+}
+.badge.soft { background: var(--gold-dim); color: var(--gold-s); border: 1px solid rgba(201,162,39,.35); }
+.badge.proven { background: var(--teal-dim); color: var(--teal-s); border: 1px solid rgba(61,155,143,.35); }
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .5rem;
+  margin: .9rem 0;
+}
+.stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: .75rem .45rem;
+  text-align: center;
+}
+.stat .n {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.05;
+  color: var(--gold-s);
+}
+.stat.teal .n { color: var(--teal-s); }
+.stat.watch .n { color: var(--watch-s); }
+.stat .l {
+  font-size: .64rem;
+  color: var(--dim);
+  margin-top: .35rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.chart-wrap {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: .9rem .85rem 1rem;
+  margin: .85rem 0;
+}
+.chart-wrap h3 {
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--gold-s);
+  margin: 0 0 .25rem;
+  font-weight: 650;
+}
+.chart-caption {
+  font-size: .78rem;
+  color: var(--dim);
+  margin: 0 0 .65rem;
+  line-height: 1.4;
+}
+.chart-box { position: relative; height: 210px; }
+.chart-box.doughnut { height: 230px; }
+.bank {
+  display: grid;
+  gap: .55rem;
+  margin: .7rem 0 1rem;
+}
+.bank-item {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: 10px;
+  padding: .7rem .8rem;
+}
+.bank-item .term {
+  font-weight: 700;
+  font-size: .88rem;
+  color: var(--gold-s);
+  letter-spacing: .02em;
+}
+.bank-item p {
+  margin: .25rem 0 0;
+  font-size: .9rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.take {
+  margin: .35rem 0;
+  padding-left: 1.1rem;
+}
+.take li { margin: .4rem 0; color: var(--muted); }
+.take li strong { color: var(--text); }
+.foot {
+  margin: 2rem 0 1rem;
+  font-size: .78rem;
+  color: var(--dim);
+  line-height: 1.45;
+}
+  </style>
+</head>
+<body>
+  <div class="banner">DRAFT · private · Soft = Carta-reported sample · noindex · phone-first 390px</div>
+  <div class="wrap">
+    <div class="pills">
+      <span class="pill gold">Soft · Carta</span>
+      <span class="pill teal">US only</span>
+      <span class="pill watch">Learner</span>
+      <span class="pill">Q2 2026</span>
+    </div>
+
+    <p class="kicker">Investor learning · 12 minutes</p>
+    <h1>Pre-seed got pickier</h1>
+    <p class="lede">Same-ish dollars. Fewer instruments. Bigger average cheques. AI still near half of the cash. All figures below are <span class="badge soft">Soft</span> Carta-reported US customer data (snapshot 10 Aug 2026), not a census of every US startup.</p>
+
+    <div class="hero" role="img" aria-label="Concentration: dollars flat, deals down">
+      <div>
+        <div class="big">$3.19B · ~11.5k instruments</div>
+        <div class="sub">Q2 2026 Carta Soft vs $3.22B · 14,825 in Q2 2025</div>
+      </div>
+    </div>
+
+    <div class="dinner" id="dinner">
+      <div class="tag">Dinner / what to say</div>
+      <p>Ask dollars or deal count. On Carta Soft, cash held; instruments fell; AI still ~half.</p>
+      <ul>
+        <li>Cap is not today's company price. It is the conversion ceiling.</li>
+        <li>US Soft colour only. Do not paste into a GCC room as local truth.</li>
+        <li>Concentration: fewer companies getting larger cheques.</li>
+      </ul>
+    </div>
+
+    <span class="section-label">Headline Soft stats</span>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="n">$276k</div>
+        <div class="l">Avg instrument</div>
+      </div>
+      <div class="stat teal">
+        <div class="n">+27%</div>
+        <div class="l">YoY avg size</div>
+      </div>
+      <div class="stat watch">
+        <div class="n">49%</div>
+        <div class="l">AI $ H1 2026</div>
+      </div>
+    </div>
+    <div class="why">
+      <strong>Why it matters</strong>
+      For an investor learning markets: "pre-seed is hot" is ambiguous. Dollars can look stable while access gets tighter. That is the Soft story here.
+    </div>
+
+    <span class="section-label">Word bank</span>
+    <div class="bank">
+      <div class="bank-item">
+        <div class="term">SAFE</div>
+        <p>Simple Agreement for Future Equity. Cash in now; equity later at a priced round. Usually not classic debt.</p>
+      </div>
+      <div class="bank-item">
+        <div class="term">Convertible note</div>
+        <p>Similar economic idea, but usually debt-like (interest, maturity) until it converts into equity.</p>
+      </div>
+      <div class="bank-item">
+        <div class="term">Valuation cap</div>
+        <p>Ceiling on the company valuation used when the SAFE/note converts. Protects the early investor if the next round prices high.</p>
+      </div>
+      <div class="bank-item">
+        <div class="term">Pre-seed</div>
+        <p>On Carta Soft: any fundraising on convertibles before the company's first priced equity round.</p>
+      </div>
+      <div class="bank-item">
+        <div class="term">Instrument</div>
+        <p>One SAFE or note contract. A single "deal" can stack many instruments (Carta Soft: big deals often 10+).</p>
+      </div>
+    </div>
+
+    <span class="section-label">Charts · Carta Soft only</span>
+    <p class="lede" style="font-size:.9rem">Chart.js plots only numbers stated in the Carta report (or the chart page's Q2 instrument count matching "&gt;11,500"). No invented years or shares.</p>
+
+    <div class="chart-wrap">
+      <h3>Cash raised · Q2 YoY</h3>
+      <p class="chart-caption"><span class="badge soft">Soft</span> US Carta pre-seed dollars. Q2 2025 $3.22B · Q2 2026 $3.19B.</p>
+      <div class="chart-box"><canvas id="chartCash" aria-label="Cash raised Q2 2025 vs Q2 2026"></canvas></div>
+    </div>
+
+    <div class="chart-wrap">
+      <h3>Instrument count · Q2 YoY</h3>
+      <p class="chart-caption"><span class="badge soft">Soft</span> 14,825 instruments in Q2 2025 vs 11,546 in Q2 2026 (report prose: more than 11,500).</p>
+      <div class="chart-box"><canvas id="chartCount" aria-label="Instrument count Q2 2025 vs Q2 2026"></canvas></div>
+    </div>
+
+    <div class="chart-wrap">
+      <h3>Where Soft dollars went · H1 2026</h3>
+      <p class="chart-caption"><span class="badge soft">Soft</span> AI 49% of pre-seed dollars in H1 2026 (near 50% full-year 2025). Non-AI remainder shown as 51%.</p>
+      <div class="chart-box doughnut"><canvas id="chartAI" aria-label="AI share of pre-seed dollars H1 2026"></canvas></div>
+    </div>
+
+    <span class="section-label">Geography Soft</span>
+    <div class="card hi">
+      <h3>Texas overtook New York</h3>
+      <p>Texas startups took <strong>9%</strong> of US pre-seed investment in Q2 (second only to California). New York fell to third by state. Top metros: <strong>Bay Area</strong>, <strong>New York City</strong>, <strong>Austin</strong> (#3).</p>
+      <div class="why" style="margin-bottom:0">
+        <strong>Why it matters</strong>
+        Capital geography moves. Useful dinner colour; still Soft and US-only.
+      </div>
+    </div>
+
+    <span class="section-label">Caps &amp; concentration</span>
+    <div class="card">
+      <h3>Record average · thin top end</h3>
+      <p>Average instrument size hit a Soft record <strong>$276k</strong> (+27% YoY). Few pre-seed deals exceed $2.5M; those that do usually stack 10+ instruments. At the 90th percentile, valuation caps on SAFEs larger than $2.5M can reach <strong>$100M</strong> (AI-linked Soft).</p>
+    </div>
+
+    <span class="section-label">5 takeaways for CoS</span>
+    <ol class="take">
+      <li><strong>Concentration:</strong> ~same cash, far fewer instruments; avg cheque at a Soft record $276k.</li>
+      <li><strong>Ask the right question:</strong> dollars vs deal count before saying the market is "up" or "down".</li>
+      <li><strong>AI share Soft:</strong> ~49% of pre-seed dollars H1 2026; high, perhaps plateauing vs 2025's ~50%.</li>
+      <li><strong>Paper literacy:</strong> SAFE / note / valuation cap / instrument are the dinner vocabulary.</li>
+      <li><strong>Scope:</strong> US Carta Soft sample. Learning colour for New Genre / GCC walks, not MENA proof.</li>
+    </ol>
+
+    <div class="why">
+      <strong>Proven method · Soft numbers</strong>
+      <span class="badge proven">Proven</span> Carta's definition: pre-seed = convertibles before first priced equity. <span class="badge soft">Soft</span> every dollar, count, and share above (proprietary anonymized customer sample; opt-outs excluded; lagging entries will revise Q2 up).
+    </div>
+
+    <p class="foot">Source: Carta State of Pre-Seed Q2 2026 (Hamza Shad). Wiki: Carta-State-of-Pre-Seed-Q2-2026 · Pre-seed-market · SAFE. Australian English · no em dashes · Chart.js Proven-series rule: Soft Carta figures labelled Soft · Friend Desk UI is separate · not for Brand.</p>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Chart === 'undefined') return;
+    var gold = '#d4af6a';
+    var teal = '#5cb8ab';
+    var muted = 'rgba(176,171,160,.85)';
+    var grid = 'rgba(255,255,255,.06)';
+    Chart.defaults.color = muted;
+    Chart.defaults.font.family = 'ui-sans-serif, system-ui, sans-serif';
+    Chart.defaults.font.size = 11;
+
+    new Chart(document.getElementById('chartCash'), {
+      type: 'bar',
+      data: {
+        labels: ['Q2 2025', 'Q2 2026'],
+        datasets: [{
+          label: 'Cash raised ($B)',
+          data: [3.22, 3.19],
+          backgroundColor: [teal, gold],
+          borderRadius: 8,
+          maxBarThickness: 56
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function (ctx) { return '$' + ctx.parsed.y + 'B (Carta Soft)'; }
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: {
+            beginAtZero: true,
+            max: 4,
+            ticks: { callback: function (v) { return '$' + v + 'B'; } },
+            grid: { color: grid }
+          }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('chartCount'), {
+      type: 'bar',
+      data: {
+        labels: ['Q2 2025', 'Q2 2026'],
+        datasets: [{
+          label: 'Instruments',
+          data: [14825, 11546],
+          backgroundColor: [teal, gold],
+          borderRadius: 8,
+          maxBarThickness: 56
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function (ctx) { return ctx.parsed.y.toLocaleString() + ' instruments (Carta Soft)'; }
+            }
+          }
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: {
+            beginAtZero: true,
+            ticks: { callback: function (v) { return (v / 1000) + 'k'; } },
+            grid: { color: grid }
+          }
+        }
+      }
+    });
+
+    new Chart(document.getElementById('chartAI'), {
+      type: 'doughnut',
+      data: {
+        labels: ['AI (49%)', 'Non-AI (51%)'],
+        datasets: [{
+          data: [49, 51],
+          backgroundColor: [gold, 'rgba(61,155,143,.55)'],
+          borderWidth: 0,
+          hoverOffset: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '58%',
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { boxWidth: 12, padding: 14 }
+          },
+          tooltip: {
+            callbacks: {
+              label: function (ctx) { return ctx.label + ' of pre-seed $ · Carta Soft H1 2026'; }
+            }
+          }
+        }
+      }
+    });
+  });
+  </script>
+</body>
+</html>
