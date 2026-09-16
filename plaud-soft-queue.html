@@ -4,7 +4,7 @@
 :root{--bg:#091012;--panel:#111c1d;--panel-2:#162526;--line:rgba(224,239,229,.12);--ink:#eef6ee;--muted:#a9bcb3;--mint:#8fe0b4;--gold:#e9c46a;--coral:#ff9e80;--blue:#9cc9ff;--shadow:0 14px 34px rgba(0,0,0,.2)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(520px 260px at 90% -5%,rgba(143,224,180,.14),transparent 64%),var(--bg);color:var(--ink);font:15px/1.5 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:0 14px 42px}main{width:100%;max-width:31rem;margin:0 auto}.topbar{padding:18px 2px 8px;display:flex;justify-content:space-between;align-items:center;gap:12px}.kicker,.field>span,.reply-label,.visual-label{font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:800}.kicker{color:var(--mint)}.back{color:var(--muted);font-size:12px;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}h1{font:400 2rem/1.08 Georgia,serif;letter-spacing:-.03em;margin:12px 0 10px}.lede{font-size:16px;color:var(--muted);margin:0 0 18px}.hero{background:linear-gradient(145deg,rgba(22,37,38,.96),rgba(17,28,29,.96));border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}.status{display:flex;align-items:center;gap:8px;color:var(--mint);font-weight:800;font-size:12px}.dot{width:9px;height:9px;background:var(--mint);border-radius:50%;box-shadow:0 0 0 5px rgba(143,224,180,.1)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}.stat{border:1px solid var(--line);border-radius:12px;padding:10px 8px;background:rgba(0,0,0,.14)}.stat strong{display:block;font-size:20px;color:var(--ink)}.stat span{display:block;color:var(--muted);font-size:11px;line-height:1.2;margin-top:2px}.notice{margin:16px 0;color:var(--muted);font-size:13px;border-left:3px solid var(--gold);padding:2px 0 2px 12px}.notice b{color:var(--ink)}.queue-card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 8px 24px rgba(0,0,0,.14)}.card-top{display:flex;align-items:center;gap:7px;min-height:22px}.rank{font-variant-numeric:tabular-nums;color:var(--gold);font-weight:800;font-size:12px}.priority,.current{font-size:10px;border-radius:99px;padding:4px 7px;line-height:1;white-space:nowrap}.priority{font-weight:800}.priority.unnamed{background:rgba(255,158,128,.14);color:var(--coral)}.priority.weak-deal{background:rgba(233,196,106,.14);color:var(--gold)}.priority.high-visibility{background:rgba(156,201,255,.14);color:var(--blue)}.current{margin-left:auto;color:var(--muted);border:1px solid var(--line)}.current b{color:var(--gold)}.queue-card h2{font:400 1.4rem/1.15 Georgia,serif;margin:15px 0 2px;overflow-wrap:anywhere}.org{margin:0 0 14px;color:var(--mint);font-weight:700;font-size:13px;overflow-wrap:anywhere}.field{padding:10px 0;border-top:1px solid var(--line)}.field>span,.reply-label,.visual-label{color:var(--muted);display:block;margin-bottom:4px}.field p{margin:0;color:#d8e2da;font-size:13px;overflow-wrap:anywhere}.field a{display:block;color:var(--blue);font-size:13px;text-decoration:none;overflow-wrap:anywhere}.field small{display:block;color:#778a82;font-size:10px;margin-top:2px;overflow-wrap:anywhere}.visual-label{margin-top:13px}.tag-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:7px 0 14px}.tag{appearance:none;border:1px solid var(--line);border-radius:9px;background:#0d1718;color:#84988f;padding:9px 3px;font:800 12px ui-sans-serif,system-ui,sans-serif;text-transform:lowercase;opacity:1}.tag.selected{border-color:rgba(233,196,106,.7);background:rgba(233,196,106,.16);color:var(--gold)}.tag:disabled{cursor:default}.reply-label{color:var(--mint);margin-top:3px}.reply{display:block;background:#071011;border:1px solid rgba(143,224,180,.2);border-radius:10px;padding:12px;color:#dff8e7;font:600 14px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere;user-select:all}.foot{color:var(--muted);font-size:12px;margin:24px 2px 0}.foot strong{color:var(--ink)}@media (min-width:520px){body{padding-inline:20px}}
 </style></head><body><main>
 <div class="topbar"><span class="kicker">Plaud enrich · Soft only</span><a class="back" href="plaud-enrich.html">When to comment</a></div>
-<section class="hero"><div class="status"><span class="dot"></span>Priority queue, ready for review</div><h1>Soft correction queue</h1><p class="lede">Twenty cards from <code>people.csv</code>. Start with unnamed speakers, then weak deal rows, then high-visibility names.</p><div class="stats"><div class="stat"><strong>20</strong><span>cards capped</span></div><div class="stat"><strong>08</strong><span>unnamed first</span></div><div class="stat"><strong>05</strong><span>visibility checks</span></div></div></section>
+<section class="hero"><div class="status"><span class="dot"></span>Priority queue, ready for review</div><h1>Soft correction queue</h1><p class="lede">Twenty cards from <code>people.csv</code>. Start with unnamed speakers, then weak deal rows, then high-visibility names needing friend vs deal confirmation.</p><div class="stats"><div class="stat"><strong>20</strong><span>cards capped</span></div><div class="stat"><strong>08</strong><span>unnamed first</span></div><div class="stat"><strong>05</strong><span>visibility checks</span></div></div></section>
 <p class="notice"><b>How to correct:</b> tag buttons are visual only. Copy one Soft line, change the final tag if needed, and send it in CoS chat. Plaud bot updates the CSV.</p><section aria-label="Soft correction cards">
       <article class="queue-card unnamed">
         <div class="card-top"><span class="rank">#01</span><span class="priority unnamed">Unnamed speaker</span><span class="current">current: <b>deal</b></span></div>
@@ -127,7 +127,7 @@
         <div class="reply-label">Paste to CoS chat</div><code class="reply">Soft: Mehran = deal</code>
       </article>
       <article class="queue-card high-visibility">
-        <div class="card-top"><span class="rank">#16</span><span class="priority high-visibility">High visibility</span><span class="current">current: <b>deal</b></span></div>
+        <div class="card-top"><span class="rank">#16</span><span class="priority high-visibility">High visibility, confirm</span><span class="current">current: <b>deal</b></span></div>
         <h2>Fida Haddad</h2><p class="org">Starlight Investment</p>
         <div class="field"><span>Context Soft</span><p>Panel: debt sustainability; credit boxes; mezz with JP Morgan Soft</p></div>
         <div class="field"><span>File Soft</span><a href="https://web.plaud.ai/file/of_e07e55ea8ef2193e1857d1e395478bfe" target="_blank" rel="noopener">Alternative Financing Panel - Private Credit</a><small>of_e07e55ea8ef2193e1857d1e395478bfe</small></div>
@@ -135,7 +135,7 @@
         <div class="reply-label">Paste to CoS chat</div><code class="reply">Soft: Fida Haddad = deal</code>
       </article>
       <article class="queue-card high-visibility">
-        <div class="card-top"><span class="rank">#17</span><span class="priority high-visibility">High visibility</span><span class="current">current: <b>deal</b></span></div>
+        <div class="card-top"><span class="rank">#17</span><span class="priority high-visibility">High visibility, confirm</span><span class="current">current: <b>deal</b></span></div>
         <h2>Yasser Al-Rumayyan</h2><p class="org">PIF</p>
         <div class="field"><span>Context Soft</span><p>Europe ~€98B / six ecosystems Soft</p></div>
         <div class="field"><span>File Soft</span><a href="https://web.plaud.ai/file/of_013eaf0a8c1640f511186a7816799122" target="_blank" rel="noopener">Europe-Gulf PIF panel Soft</a><small>of_013eaf0a8c1640f511186a7816799122</small></div>
@@ -143,7 +143,7 @@
         <div class="reply-label">Paste to CoS chat</div><code class="reply">Soft: Yasser Al-Rumayyan = deal</code>
       </article>
       <article class="queue-card high-visibility">
-        <div class="card-top"><span class="rank">#18</span><span class="priority high-visibility">High visibility</span><span class="current">current: <b>deal</b></span></div>
+        <div class="card-top"><span class="rank">#18</span><span class="priority high-visibility">High visibility, confirm</span><span class="current">current: <b>deal</b></span></div>
         <h2>Anthony Gutman</h2><p class="org">Goldman Sachs</p>
         <div class="field"><span>Context Soft</span><p>Europe AI / infra supercycle Soft</p></div>
         <div class="field"><span>File Soft</span><a href="https://web.plaud.ai/file/of_013eaf0a8c1640f511186a7816799122" target="_blank" rel="noopener">Europe-Gulf PIF panel Soft</a><small>of_013eaf0a8c1640f511186a7816799122</small></div>
@@ -151,7 +151,7 @@
         <div class="reply-label">Paste to CoS chat</div><code class="reply">Soft: Anthony Gutman = deal</code>
       </article>
       <article class="queue-card high-visibility">
-        <div class="card-top"><span class="rank">#19</span><span class="priority high-visibility">High visibility</span><span class="current">current: <b>deal</b></span></div>
+        <div class="card-top"><span class="rank">#19</span><span class="priority high-visibility">High visibility, confirm</span><span class="current">current: <b>deal</b></span></div>
         <h2>Jerry Todd</h2><p class="org">PIF</p>
         <div class="field"><span>Context Soft</span><p>KPI / three portfolios Soft</p></div>
         <div class="field"><span>File Soft</span><a href="https://web.plaud.ai/file/of_7cd5670da4c824672fe6af754713336a" target="_blank" rel="noopener">Sovereign AI FII Rome Soft</a><small>of_7cd5670da4c824672fe6af754713336a</small></div>
@@ -159,7 +159,7 @@
         <div class="reply-label">Paste to CoS chat</div><code class="reply">Soft: Jerry Todd = deal</code>
       </article>
       <article class="queue-card high-visibility">
-        <div class="card-top"><span class="rank">#20</span><span class="priority high-visibility">High visibility</span><span class="current">current: <b>deal</b></span></div>
+        <div class="card-top"><span class="rank">#20</span><span class="priority high-visibility">High visibility, confirm</span><span class="current">current: <b>deal</b></span></div>
         <h2>Madam Anjouhani</h2><p class="org">PIF</p>
         <div class="field"><span>Context Soft</span><p>FII Rome Soft</p></div>
         <div class="field"><span>File Soft</span><a href="https://web.plaud.ai/file/of_7cd5670da4c824672fe6af754713336a" target="_blank" rel="noopener">Sovereign AI FII Rome Soft</a><small>of_7cd5670da4c824672fe6af754713336a</small></div>
