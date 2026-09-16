@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0c0e12" />
+<title>Floor Capture · notes → CSV</title>
+<style>
+:root{--bg:#0c0e12;--card:#171c26;--line:rgba(255,255,255,.08);--text:#e8e6e1;--muted:#b0aba0;--gold:#c9a227;--teal:#3d9b8f;--sans:ui-sans-serif,system-ui,-apple-system,sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.5;padding:1rem 1rem 2.5rem}
+.wrap{max-width:26rem;margin:0 auto}
+.kicker{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+h1{font-size:1.6rem;font-weight:600;margin:.4rem 0 .75rem}
+.muted{color:var(--muted);font-size:.92rem;margin:0 0 1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem;margin:.75rem 0}
+label{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin:0 0 .35rem}
+textarea,input{width:100%;background:#0f131a;border:1px solid var(--line);border-radius:10px;color:var(--text);padding:.7rem;font:inherit}
+textarea{min-height:7rem;resize:vertical}
+.row{display:grid;gap:.5rem;margin-top:.6rem}
+button{width:100%;border:0;border-radius:12px;padding:.85rem 1rem;font-weight:700;font-size:1rem;cursor:pointer;margin-top:.5rem}
+.primary{background:var(--teal);color:#04110f}.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+pre{white-space:pre-wrap;word-break:break-word;font-size:.8rem;color:var(--muted);margin:.5rem 0 0}
+.hint{font-size:.85rem;color:var(--muted);margin-top:.5rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Build MVP · phone · 20 min</div>
+  <h1>Floor Capture</h1>
+  <p class="muted">Paste dinner notes. Get CSV rows: name | firm | why-now | follow-up. Private. Not a pitch.</p>
+
+  <div class="card">
+    <label for="raw">Raw notes</label>
+    <textarea id="raw" placeholder="One person per line, e.g.&#10;Sara · Peak XV · likes credit OS · intro Thu&#10;Omar, Khwarizmi, asked about SME indicators"></textarea>
+    <p class="hint">Tip: one contact per line. Separators · , | or tabs work.</p>
+    <button class="primary" type="button" id="parse">Make 3+ CSV rows</button>
+    <button class="ghost" type="button" id="copy">Copy CSV</button>
+    <button class="ghost" type="button" id="dl">Download CSV</button>
+  </div>
+
+  <div class="card">
+    <label>Preview</label>
+    <pre id="out">name,firm,why_now,follow_up</pre>
+  </div>
+</div>
+<script>
+function splitLine(line){
+  const parts = line.split(/\s*[·\|,\t]\s*/).map(s=>s.trim()).filter(Boolean);
+  return {
+    name: parts[0]||'',
+    firm: parts[1]||'',
+    why_now: parts[2]||'',
+    follow_up: parts.slice(3).join(' ')||''
+  };
+}
+function esc(s){return /["\n,]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s;}
+function toCsv(rows){
+  const head='name,firm,why_now,follow_up';
+  const body=rows.map(r=>[r.name,r.firm,r.why_now,r.follow_up].map(esc).join(','));
+  return [head,...body].join('\n');
+}
+function rowsFromRaw(raw){
+  return raw.split(/\n+/).map(l=>l.trim()).filter(Boolean).map(splitLine).filter(r=>r.name);
+}
+const out=document.getElementById('out');
+let last='name,firm,why_now,follow_up';
+document.getElementById('parse').onclick=()=>{
+  const rows=rowsFromRaw(document.getElementById('raw').value);
+  last=toCsv(rows.length?rows:[{name:'',firm:'',why_now:'',follow_up:''}]);
+  out.textContent=last;
+};
+document.getElementById('copy').onclick=async()=>{
+  try{await navigator.clipboard.writeText(last); alert('CSV copied');}catch(e){prompt('Copy:', last);}
+};
+document.getElementById('dl').onclick=()=>{
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([last],{type:'text/csv'}));
+  a.download='floor-capture.csv'; a.click();
+};
+</script>
+</body>
+</html>
